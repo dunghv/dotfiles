@@ -5,4 +5,3 @@ all:
 	ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 	rm -rf ~/.zshrc
 	ln -s ~/.dotfiles/zshrc ~/.zshrc
-

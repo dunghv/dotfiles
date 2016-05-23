@@ -49,7 +49,7 @@ ZSH_THEME="steeef"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git textmate syntax-highlighting)
+plugins=(git textmate syntax-highlighting docker docker-compose bower brew cp)
 
 # User configuration
 
