@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/dunghv/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,7 +49,7 @@ ZSH_THEME="steeef"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git textmate syntax-highlighting docker docker-compose bower brew cp)
+plugins=(git textmate docker docker-compose bower brew cp)
 
 # User configuration
 
@@ -124,7 +124,9 @@ if [[ -n "$(command -v tmux)" ]]; then
     }
 fi
 
-eval $(docker-machine env)
+if [[ -n "$(command -v docker-machine)" ]]; then
+    eval $(docker-machine env)
+fi
 
 colours() {
     for i in {0..255} ; do
