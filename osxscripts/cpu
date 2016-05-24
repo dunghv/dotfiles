@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-uptime | sed s/,/\ /g | awk '{print $10,$11,$12}'

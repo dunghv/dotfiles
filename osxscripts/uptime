@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-uptime | sed s/,/\ •/g | awk '{print $3,$4}'
+uptime | sed s/,/\ /g | awk '{print $3,$4,$5}'

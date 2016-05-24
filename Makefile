@@ -1,4 +1,5 @@
 all:
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	rm -rf ~/.vimrc
 	ln -s ~/.dotfiles/vimrc ~/.vimrc
 	rm -rf ~/.tmux.conf
