@@ -55,6 +55,7 @@ plugins=(git textmate docker docker-compose bower brew cp)
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/dunghv/bin:/usr/X11R6/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
+export PATH=~/.composer/vendor/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
