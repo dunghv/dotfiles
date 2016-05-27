@@ -55,8 +55,13 @@ plugins=(git textmate docker docker-compose bower brew cp)
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/dunghv/bin:/usr/X11R6/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
+export PATH=~/.composer/vendor/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
+
+if [ -f ~/.alias ]; then
+    source ~/.alias
+fi
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -80,8 +85,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+#alias zshconfig="mate ~/.zshrc"
+#alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
 # custom
