@@ -59,7 +59,9 @@ export PATH=~/.composer/vendor/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/.alias
+if [ -f ~/.alias ]; then
+    source ~/.alias
+fi
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
