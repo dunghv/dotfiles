@@ -63,6 +63,10 @@ if [ -f ~/.alias ]; then
     source ~/.alias
 fi
 
+if [ -f ~/.functions ]; then
+    source ~/.functions
+fi
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -127,10 +131,6 @@ if [[ -n "$(command -v tmux)" ]]; then
         export STY="[$1] $(uname -n)"
         tmux -u new -s "$1" || tmux -u att $_detach_flag -t "$1"
     }
-fi
-
-if [[ -n "$(command -v docker-machine)" ]]; then
-    eval $(docker-machine env)
 fi
 
 colours() {
