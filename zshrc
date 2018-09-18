@@ -5,7 +5,7 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell" #"steeef"
+ZSH_THEME="random" #"steeef"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -53,11 +53,13 @@ plugins=(git textmate docker docker-compose bower brew cp z)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/dunghv/bin:/usr/X11R6/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-export PATH=~/.composer/vendor/bin:$PATH
+if [ -d ~/.composer/vendor/bin ]; then
+	export PATH=~/.composer/vendor/bin:$PATH
+fi
 
-source $ZSH/oh-my-zsh.sh
+if [ -d ~/.npm-global/bin ]; then
+	export PATH=~/.npm-global/bin:$PATH
+fi
 
 if [ -f ~/.alias ]; then
     source ~/.alias
@@ -66,32 +68,6 @@ fi
 if [ -f ~/.functions ]; then
     source ~/.functions
 fi
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-#alias zshconfig="mate ~/.zshrc"
-#alias ohmyzsh="mate ~/.oh-my-zsh"
-
 
 # custom
 
@@ -132,9 +108,3 @@ if [[ -n "$(command -v tmux)" ]]; then
         tmux -u new -s "$1" || tmux -u att $_detach_flag -t "$1"
     }
 fi
-
-colours() {
-    for i in {0..255} ; do
-        printf "\x1b[38;5;${i}mcolour${i}\n"
-    done
-}
