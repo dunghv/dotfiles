@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-uptime | sed -E s/'^.* up '/''/g | sed -E s/', +[0-9]+ user.*'/''/g | sed s/'  '/' '/g
