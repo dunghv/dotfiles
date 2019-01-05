@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 
 #export ZSH="/Users/dunghv/.oh-my-zsh"
-export ZSH="./.oh-my-zsh"
+export ZSH="/home/dunghv/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -158,3 +158,10 @@ if [[ -n "$(command -v tmux)" ]]; then
         tmux -u new -s "$1" || tmux -u att $_detach_flag -t "$1"
     }
 fi
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_MODE='nerdfont-complete'
+source ~/.zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+
